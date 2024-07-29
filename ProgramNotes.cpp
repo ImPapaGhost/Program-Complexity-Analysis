@@ -1371,12 +1371,12 @@ int main() {
         printf("Enter degrees, minutes, and seconds separated by spaces: "); 
         scanf("%d %d %d", &degrees, &minutes, &seconds); 
         decimal_degrees = dms_to_decimal(degrees, minutes, seconds); 
-        printf("%d°%d'%d\" is %.6f°\n", degrees, minutes, seconds, decimal_degrees); 
+        printf("%dÂ°%d'%d\" is %.6fÂ°\n", degrees, minutes, seconds, decimal_degrees); 
     } else if (choice == 2) { 
         printf("Enter decimal degrees: "); 
         scanf("%lf", &decimal_degrees); 
         decimal_to_dms(decimal_degrees, &degrees, &minutes, &seconds); 
-        printf("%.6f° is %d°%d'%d\"\n", decimal_degrees, degrees, minutes, seconds); 
+        printf("%.6fÂ° is %dÂ°%d'%d\"\n", decimal_degrees, degrees, minutes, seconds); 
     } else { 
         printf("Invalid choice\n"); 
     } 
@@ -1409,12 +1409,12 @@ int main() {
         cout << "Enter degrees, minutes, and seconds separated by spaces: "; 
         cin >> degrees >> minutes >> seconds; 
         decimal_degrees = dms_to_decimal(degrees, minutes, seconds); 
-        cout << degrees << "°" << minutes << "'" << seconds << "\" is " << decimal_degrees << "°" << endl; 
+        cout << degrees << "Â°" << minutes << "'" << seconds << "\" is " << decimal_degrees << "Â°" << endl; 
     } else if (choice == 2) { 
         cout << "Enter decimal degrees: "; 
         cin >> decimal_degrees; 
         decimal_to_dms(decimal_degrees, degrees, minutes, seconds); 
-        cout << decimal_degrees << "° is " << degrees << "°" << minutes << "'" << seconds << "\"" << endl; 
+        cout << decimal_degrees << "Â° is " << degrees << "Â°" << minutes << "'" << seconds << "\"" << endl; 
     } else { 
         cout << "Invalid choice" << endl; 
     } 
@@ -1447,12 +1447,12 @@ class Program {
             int minutes = int.Parse(inputs[1]); 
             int seconds = int.Parse(inputs[2]); 
             double decimalDegrees = DmsToDecimal(degrees, minutes, seconds); 
-            Console.WriteLine($"{degrees}°{minutes}'{seconds}\" is {decimalDegrees}°"); 
+            Console.WriteLine($"{degrees}Â°{minutes}'{seconds}\" is {decimalDegrees}Â°"); 
         } else if (choice == 2) { 
             Console.Write("Enter decimal degrees: "); 
             double decimalDegrees = double.Parse(Console.ReadLine()); 
             DecimalToDms(decimalDegrees, out int degrees, out int minutes, out int seconds); 
-            Console.WriteLine($"{decimalDegrees}° is {degrees}°{minutes}'{seconds}\""); 
+            Console.WriteLine($"{decimalDegrees}Â° is {degrees}Â°{minutes}'{seconds}\""); 
         } else { 
             Console.WriteLine("Invalid choice"); 
         } 
@@ -1480,11 +1480,11 @@ if choice == 1:
     minutes = int(input("Enter minutes: ")) 
     seconds = int(input("Enter seconds: ")) 
     decimal_degrees = dms_to_decimal(degrees, minutes, seconds) 
-    print(f"{degrees}°{minutes}'{seconds}\" is {decimal_degrees}°") 
+    print(f"{degrees}Â°{minutes}'{seconds}\" is {decimal_degrees}Â°") 
 elif choice == 2: 
     decimal_degrees = float(input("Enter decimal degrees: ")) 
     degrees, minutes, seconds = decimal_to_dms(decimal_degrees) 
-    print(f"{decimal_degrees}° is {degrees}°{minutes}'{seconds}\"") 
+    print(f"{decimal_degrees}Â° is {degrees}Â°{minutes}'{seconds}\"") 
 else: 
     print("Invalid choice") 
 
@@ -1509,11 +1509,11 @@ if (choice === 1) {
     const minutes = parseInt(prompt("Enter minutes: ")); 
     const seconds = parseInt(prompt("Enter seconds: ")); 
     const decimalDegrees = dmsToDecimal(degrees, minutes, seconds); 
-    console.log(`${degrees}°${minutes}'${seconds}" is ${decimalDegrees}°`); 
+    console.log(`${degrees}Â°${minutes}'${seconds}" is ${decimalDegrees}Â°`); 
 } else if (choice === 2) { 
     const decimalDegrees = parseFloat(prompt("Enter decimal degrees: ")); 
     const { degrees, minutes, seconds } = decimalToDms(decimalDegrees); 
-    console.log(`${decimalDegrees}° is ${degrees}°${minutes}'${seconds}"`); 
+    console.log(`${decimalDegrees}Â° is ${degrees}Â°${minutes}'${seconds}"`); 
 } else { 
     console.log("Invalid choice"); 
 } 
@@ -1541,11 +1541,11 @@ if (choice == 1) {
     minutes <- as.numeric(readline("Enter minutes: ")) 
     seconds <- as.numeric(readline("Enter seconds: ")) 
     decimal_degrees <- dms_to_decimal(degrees, minutes, seconds) 
-    cat(degrees, "°", minutes, "'", seconds, "\" is ", decimal_degrees, "°\n") 
+    cat(degrees, "Â°", minutes, "'", seconds, "\" is ", decimal_degrees, "Â°\n") 
 } else if (choice == 2) { 
     decimal_degrees <- as.numeric(readline("Enter decimal degrees: "))
     dms <- decimal_to_dms(decimal_degrees)
-    cat(decimal_degrees, "° is ", dms[1], "°", dms[2], "'", dms[3], "\"\n")
+    cat(decimal_degrees, "Â° is ", dms[1], "Â°", dms[2], "'", dms[3], "\"\n")
 } else {
     cat("Invalid choice\n")
 }
@@ -1772,7 +1772,7 @@ linear_speed <- calculate_linear_speed(radius, angular_speed)
 cat("The angular speed is:", sprintf("%.6f", angular_speed), "radians per second\n") 
 cat("The linear speed is:", sprintf("%.6f", linear_speed), "meters per second\n") 
 
-//A "Hello World!" Program------------------------------------------------------------------------------------------------------
+//A Degrees to Radians, Radians to Degrees, DMS to Decimal, Decimal to DMS Program------------------------------------------------------------------------------------------------------
 
 //C
 #include <stdio.h> 
@@ -1804,7 +1804,7 @@ void decimal_to_dms(double decimal, char* direction, int* degrees, int* minutes,
     *seconds = (int) ((((decimal - *degrees) * 60.0) - *minutes) * 60.0); 
 } 
 void parse_dms(char* input, char* direction, int* degrees, int* minutes, int* seconds) { 
-    sscanf(input, "%s %d° %d' %d\"", direction, degrees, minutes, seconds); 
+    sscanf(input, "%s %dÂ° %d' %d\"", direction, degrees, minutes, seconds); 
 } 
 void parse_decimal(char* input, char* direction, double* decimal) { 
     sscanf(input, "%c%lf", direction, decimal); 
@@ -1848,12 +1848,12 @@ int main() {
         fgets(input, sizeof(input), stdin); 
         parse_decimal(input, direction, &decimal); 
         decimal_to_dms(decimal, direction, &degrees, &minutes, &seconds); 
-        printf("Latitude: %s %d° %d' %d\"\n", direction, degrees, minutes, seconds); 
+        printf("Latitude: %s %dÂ° %d' %d\"\n", direction, degrees, minutes, seconds); 
         printf("Enter decimal degrees for longitude: "); 
         fgets(input, sizeof(input), stdin); 
         parse_decimal(input, direction, &decimal); 
         decimal_to_dms(decimal, direction, &degrees, &minutes, &seconds); 
-        printf("Longitude: %s %d° %d' %d\"\n", direction, degrees, minutes, seconds); 
+        printf("Longitude: %s %dÂ° %d' %d\"\n", direction, degrees, minutes, seconds); 
     } else { 
         printf("Invalid choice\n"); 
     } 
@@ -1889,7 +1889,7 @@ void decimal_to_dms(double decimal, char &direction, int &degrees, int &minutes,
     seconds = static_cast<int>((((decimal - degrees) * 60.0) - minutes) * 60.0); 
 } 
 void parse_dms(string input, char &direction, int &degrees, int &minutes, int &seconds) { 
-    sscanf(input.c_str(), "%c %d° %d' %d\"", &direction, &degrees, &minutes, &seconds); 
+    sscanf(input.c_str(), "%c %dÂ° %d' %d\"", &direction, &degrees, &minutes, &seconds); 
 } 
 void parse_decimal(string input, char &direction, double &decimal) { 
     sscanf(input.c_str(), "%c%lf", &direction, &decimal); 
@@ -1933,12 +1933,12 @@ int main() {
         getline(cin, input); 
         parse_decimal(input, direction, decimal); 
         decimal_to_dms(decimal, direction, degrees, minutes, seconds); 
-        cout << "Latitude: " << direction << " " << degrees << "° " << minutes << "' " << seconds << "\"" << endl; 
+        cout << "Latitude: " << direction << " " << degrees << "Â° " << minutes << "' " << seconds << "\"" << endl; 
         cout << "Enter decimal degrees for longitude: "; 
         getline(cin, input); 
         parse_decimal(input, direction, decimal); 
         decimal_to_dms(decimal, direction, degrees, minutes, seconds); 
-        cout << "Longitude: " << direction << " " << degrees << "° " << minutes << "' " << seconds << "\"" << endl; 
+        cout << "Longitude: " << direction << " " << degrees << "Â° " << minutes << "' " << seconds << "\"" << endl; 
     } else { 
         cout << "Invalid choice\n"; 
     } 
@@ -1972,7 +1972,7 @@ class Program {
         seconds = (int)((((decimal - degrees) * 60.0) - minutes) * 60.0); 
     } 
     static void ParseDMS(string input, out char direction, out int degrees, out int minutes, out int seconds) { 
-        string[] parts = input.Split(new char[] { ' ', '°', '\'', '\"' }, StringSplitOptions.RemoveEmptyEntries); 
+        string[] parts = input.Split(new char[] { ' ', 'Â°', '\'', '\"' }, StringSplitOptions.RemoveEmptyEntries); 
         direction = parts[0][0]; 
         degrees = int.Parse(parts[1]); 
         minutes = int.Parse(parts[2]); 
@@ -2008,12 +2008,12 @@ class Program {
             string input = Console.ReadLine(); 
             ParseDecimal(input, out char direction, out double decimal); 
             DecimalToDMS(decimal, ref direction, out int degrees, out int minutes, out int seconds); 
-            Console.WriteLine($"Latitude: {direction} {degrees}° {minutes}' {seconds}\""); 
+            Console.WriteLine($"Latitude: {direction} {degrees}Â° {minutes}' {seconds}\""); 
             Console.Write("Enter decimal degrees for longitude: "); 
             input = Console.ReadLine(); 
             ParseDecimal(input, out direction, out decimal); 
             DecimalToDMS(decimal, ref direction, out degrees, out minutes, out seconds); 
-            Console.WriteLine($"Longitude: {direction} {degrees}° {minutes}' {seconds}\""); 
+            Console.WriteLine($"Longitude: {direction} {degrees}Â° {minutes}' {seconds}\""); 
         } else { 
             Console.WriteLine("Invalid choice"); 
         } 
@@ -2042,7 +2042,7 @@ def decimal_to_dms(decimal, direction):
     seconds = int((((decimal - degrees) * 60) - minutes) * 60) 
     return degrees, minutes, seconds, direction 
 def parse_dms(input_str): 
-    parts = input_str.replace("°", "").replace("'", "").replace("\"", "").split() 
+    parts = input_str.replace("Â°", "").replace("'", "").replace("\"", "").split() 
     direction = parts[0] 
     degrees = int(parts[1]) 
     minutes = int(parts[2]) 
@@ -2071,11 +2071,11 @@ elif choice == 4:
     input_str = input("Enter decimal degrees for latitude: ") 
     direction, decimal = parse_decimal(input_str) 
     degrees, minutes, seconds, direction = decimal_to_dms(decimal, direction) 
-    print(f"Latitude: {direction} {degrees}° {minutes}' {seconds}\"") 
+    print(f"Latitude: {direction} {degrees}Â° {minutes}' {seconds}\"") 
     input_str = input("Enter decimal degrees for longitude: ") 
     direction, decimal = parse_decimal(input_str) 
     degrees, minutes, seconds, direction = decimal_to_dms(decimal, direction) 
-    print(f"Longitude: {direction} {degrees}° {minutes}' {seconds}\"") 
+    print(f"Longitude: {direction} {degrees}Â° {minutes}' {seconds}\"") 
 else: 
     print("Invalid choice") 
 
@@ -2105,7 +2105,7 @@ function decimalToDMS(decimal, direction) {
     return [degrees, minutes, seconds, direction]; 
 } 
 function parseDMS(input) { 
-    var parts = input.replace(/[°'\"]/g, "").split(/\s+/); 
+    var parts = input.replace(/[Â°'\"]/g, "").split(/\s+/); 
     return { 
         direction: parts[0], 
         degrees: parseInt(parts[1]), 
@@ -2137,11 +2137,11 @@ if (choice === 1) {
     var input = prompt("Enter decimal degrees for latitude: "); 
     var [direction, decimal] = parseDecimal(input); 
     var [degrees, minutes, seconds, dir] = decimalToDMS(decimal, direction); 
-    console.log("Latitude: " + dir + " " + degrees + "° " + minutes + "' " + seconds + "\""); 
+    console.log("Latitude: " + dir + " " + degrees + "Â° " + minutes + "' " + seconds + "\""); 
     input = prompt("Enter decimal degrees for longitude: "); 
     [direction, decimal] = parseDecimal(input); 
     [degrees, minutes, seconds, dir] = decimalToDMS(decimal, direction); 
-    console.log("Longitude: " + dir + " " + degrees + "° " + minutes + "' " + seconds + "\""); 
+    console.log("Longitude: " + dir + " " + degrees + "Â° " + minutes + "' " + seconds + "\""); 
 } else { 
     console.log("Invalid choice"); 
 } 
@@ -2172,7 +2172,7 @@ function decimalToDMS(decimal, direction) {
     return [degrees, minutes, seconds, direction]; 
 } 
 function parseDMS(input) { 
-    var parts = input.replace(/[°'\"]/g, "").split(/\s+/); 
+    var parts = input.replace(/[Â°'\"]/g, "").split(/\s+/); 
     return { 
         direction: parts[0], 
         degrees: parseInt(parts[1]), 
@@ -2204,11 +2204,564 @@ if (choice === 1) {
     var input = prompt("Enter decimal degrees for latitude: "); 
     var [direction, decimal] = parseDecimal(input); 
     var [degrees, minutes, seconds, dir] = decimalToDMS(decimal, direction); 
-    console.log("Latitude: " + dir + " " + degrees + "° " + minutes + "' " + seconds + "\""); 
+    console.log("Latitude: " + dir + " " + degrees + "Â° " + minutes + "' " + seconds + "\""); 
     input = prompt("Enter decimal degrees for longitude: "); 
     [direction, decimal] = parseDecimal(input); 
     [degrees, minutes, seconds, dir] = decimalToDMS(decimal, direction); 
-    console.log("Longitude: " + dir + " " + degrees + "° " + minutes + "' " + seconds + "\""); 
+    console.log("Longitude: " + dir + " " + degrees + "Â° " + minutes + "' " + seconds + "\""); 
 } else { 
     console.log("Invalid choice"); 
 } 
+
+//A Distance Traveled by the Tip of Big Ben's Minute Hand in a Given Time Program------------------------------------------------------------------------------------------------------
+
+//C
+#include <stdio.h>
+double calculate_distance(double radius, double minutes) {
+    const double PI = 3.141592653589793;
+    double circumference = 2 * PI * radius;
+    return (minutes / 60.0) * circumference;
+}
+int main() {
+    double radius = 36.0; // Length of the minute hand in feet
+    double minutes, distance;
+    printf("This program calculates the distance traveled by the tip of Big Ben's minute hand in a given time.\n");
+    printf("Enter the number of minutes: ");
+    scanf("%lf", &minutes);
+    distance = calculate_distance(radius, minutes);
+    printf("The distance traveled by the tip of the minute hand in %lf minutes is: %lf feet\n", minutes, distance);
+    return 0;
+}
+
+//C++
+#include <iostream>
+const double PI = 3.141592653589793;
+double calculate_distance(double radius, double minutes) {
+    double circumference = 2 * PI * radius;
+    return (minutes / 60.0) * circumference;
+}
+int main() {
+    double radius = 36.0;
+    double minutes, distance;
+    std::cout << "This program calculates the distance traveled by the tip of Big Ben's minute hand in a given time." << std::endl;
+    std::cout << "Enter the number of minutes: ";
+    std::cin >> minutes;
+    distance = calculate_distance(radius, minutes);
+    std::cout << "The distance traveled by the tip of the minute hand in " << minutes << " minutes is: " << distance << " feet" << std::endl;
+    return 0;
+}
+
+//C#
+using System;
+class Program
+{
+    const double PI = 3.141592653589793;
+    static double CalculateDistance(double radius, double minutes)
+    {
+        double circumference = 2 * PI * radius;
+        return (minutes / 60.0) * circumference;
+    }
+    static void Main()
+    {
+        double radius = 36.0;
+        double minutes, distance;
+        Console.WriteLine("This program calculates the distance traveled by the tip of Big Ben's minute hand in a given time.");
+        Console.Write("Enter the number of minutes: ");
+        minutes = Convert.ToDouble(Console.ReadLine());
+        distance = CalculateDistance(radius, minutes);
+        Console.WriteLine($"The distance traveled by the tip of the minute hand in {minutes} minutes is: {distance} feet");
+    }
+}
+
+//Python
+PI = 3.141592653589793
+
+def calculate_distance(radius, minutes):
+    circumference = 2 * PI * radius
+    return (minutes / 60.0) * circumference
+def main():
+    radius = 36.0 # Length of the minute hand in feet
+    # Introduction
+    print("This program calculates the distance traveled by the tip of Big Ben's minute hand in a given time.")
+    # User input
+    minutes = float(input("Enter the number of minutes: "))
+    # Calculate distance
+    distance = calculate_distance(radius, minutes)
+    # Display result
+    print(f"The distance traveled by the tip of the minute hand in {minutes} minutes is: {distance} feet")
+if __name__ == "__main__":
+    main()
+
+//JavaScript
+const PI = 3.141592653589793;
+function calculateDistance(radius, minutes) {
+    let circumference = 2 * PI * radius;
+    return (minutes / 60.0) * circumference;
+}
+console.log("This program calculates the distance traveled by the tip of Big Ben's minute hand in a given time.");
+let minutes = prompt("Enter the number of minutes: ");
+minutes = parseFloat(minutes);
+let radius = 36.0; // Length of the minute hand in feet
+let distance = calculateDistance(radius, minutes);
+console.log(`The distance traveled by the tip of the minute hand in ${minutes} minutes is: ${distance} feet`);
+
+//R
+calculate_distance <- function(radius, minutes) {
+  PI <- 3.141592653589793
+  circumference <- 2 * PI * radius
+  return((minutes / 60.0) * circumference)
+}
+main <- function() {
+  radius <- 36.0 # Length of the minute hand in feet
+  # Introduction
+  cat("This program calculates the distance traveled by the tip of Big Ben's minute hand in a given time.\n")
+  # User input
+  minutes <- as.numeric(readline(prompt = "Enter the number of minutes: "))
+  # Calculate distance
+  distance <- calculate_distance(radius, minutes)
+  # Display result
+  cat("The distance traveled by the tip of the minute hand in", minutes, "minutes is:", distance, "feet\n")
+}
+main()
+
+//A Trigonometric Function Calculator Program------------------------------------------------------------------------------------------------------
+
+//C
+#include <stdio.h>
+#define PI 3.141592653589793
+double radians(double degrees) {
+    return degrees * PI / 180.0;
+}
+double tan_approx(double x) {
+    double term = x;
+    double sum = x;
+    for (int i = 1; i <= 10; ++i) {
+        term *= -x * x / (2 * i * (2 * i + 1));
+        sum += term;
+    }
+    return sum / (1 - sum);
+}
+double sin_approx(double x) {
+    double term = x;
+    double sum = x;
+    for (int i = 1; i <= 10; ++i) {
+        term *= -x * x / ((2 * i) * (2 * i + 1));
+        sum += term;
+    }
+    return sum;
+}
+double cos_approx(double x) {
+    double term = 1;
+    double sum = 1;
+    for (int i = 1; i <= 10; ++i) {
+        term *= -x * x / ((2 * i - 1) * (2 * i));
+        sum += term;
+    }
+    return sum;
+}
+double cot(double angle) {
+    double tan_value = tan_approx(angle);
+    return 1 / tan_value;
+}
+double sec(double angle) {
+    double cos_value = cos_approx(angle);
+    return 1 / cos_value;
+}
+double csc(double angle) {
+    double sin_value = sin_approx(angle);
+    return 1 / sin_value;
+}
+int main() {
+    double angle, angle_rad;
+    int choice;
+    printf("Welcome to the Enhanced Trigonometric Function Calculator\n");
+    printf("This program calculates all six trigonometric functions for a given angle without using math libraries.\n\n");
+    printf("Choose the input type:\n1. Degrees\n2. Radians\nEnter your choice (1/2): ");
+    scanf("%d", &choice);
+    if (choice == 1) {
+        printf("Enter the angle in degrees: ");
+        scanf("%lf", &angle);
+        angle_rad = radians(angle);
+    }
+    else if (choice == 2) {
+        printf("Enter the angle in radians: ");
+        scanf("%lf", &angle);
+        angle_rad = angle;
+    }
+    else {
+        printf("Invalid choice\n");
+        return 1;
+    }
+    printf("sin(%.2lf) = %.5lf\n", angle, sin_approx(angle_rad));
+    printf("cos(%.2lf) = %.5lf\n", angle, cos_approx(angle_rad));
+    printf("tan(%.2lf) = %.5lf\n", angle, tan_approx(angle_rad));
+    printf("cot(%.2lf) = %.5lf\n", angle, cot(angle_rad));
+    printf("sec(%.2lf) = %.5lf\n", angle, sec(angle_rad));
+    printf("csc(%.2lf) = %.5lf\n", angle, csc(angle_rad));
+    return 0;
+}
+
+//C++
+#include <iostream>
+
+#define PI 3.141592653589793
+
+double radians(double degrees) {
+    return degrees * PI / 180.0;
+}
+
+double tan_approx(double x) {
+    double term = x;
+    double sum = x;
+    for (int i = 1; i <= 10; ++i) {
+        term *= -x * x / (2 * i * (2 * i + 1));
+        sum += term;
+    }
+    return sum / (1 - sum);
+}
+
+double sin_approx(double x) {
+    double term = x;
+    double sum = x;
+    for (int i = 1; i <= 10; ++i) {
+        term *= -x * x / ((2 * i) * (2 * i + 1));
+        sum += term;
+    }
+    return sum;
+}
+
+double cos_approx(double x) {
+    double term = 1;
+    double sum = 1;
+    for (int i = 1; i <= 10; ++i) {
+        term *= -x * x / ((2 * i - 1) * (2 * i));
+        sum += term;
+    }
+    return sum;
+}
+
+double cot(double angle) {
+    double tan_value = tan_approx(angle);
+    return 1 / tan_value;
+}
+
+double sec(double angle) {
+    double cos_value = cos_approx(angle);
+    return 1 / cos_value;
+}
+
+double csc(double angle) {
+    double sin_value = sin_approx(angle);
+    return 1 / sin_value;
+}
+
+int main() {
+    double angle, angle_rad;
+    int choice;
+    std::cout << "Welcome to the Enhanced Trigonometric Function Calculator\n";
+    std::cout << "This program calculates all six trigonometric functions for a given angle without using math libraries.\n\n";
+    std::cout << "Choose the input type:\n1. Degrees\n2. Radians\nEnter your choice (1/2): ";
+    std::cin >> choice;
+    if (choice == 1) {
+        std::cout << "Enter the angle in degrees: ";
+        std::cin >> angle;
+        angle_rad = radians(angle);
+    }
+    else if (choice == 2) {
+        std::cout << "Enter the angle in radians: ";
+        std::cin >> angle;
+        angle_rad = angle;
+    }
+    else {
+        std::cout << "Invalid choice\n";
+        return 1;
+    }
+    std::cout << "sin(" << angle << ") = " << sin_approx(angle_rad) << "\n";
+    std::cout << "cos(" << angle << ") = " << cos_approx(angle_rad) << "\n";
+    std::cout << "tan(" << angle << ") = " << tan_approx(angle_rad) << "\n";
+    std::cout << "cot(" << angle << ") = " << cot(angle_rad) << "\n";
+    std::cout << "sec(" << angle << ") = " << sec(angle_rad) << "\n";
+    std::cout << "csc(" << angle << ") = " << csc(angle_rad) << "\n";
+    return 0;
+}
+
+//C#
+using System;
+class Program
+{
+    const double PI = 3.141592653589793;
+    static double Radians(double degrees)
+    {
+        return degrees * PI / 180.0;
+    }
+    static double TanApprox(double x)
+    {
+        double term = x;
+        double sum = x;
+        for (int i = 1; i <= 10; ++i)
+        {
+            term *= -x * x / (2 * i * (2 * i + 1));
+            sum += term;
+        }
+        return sum / (1 - sum);
+    }
+    static double SinApprox(double x)
+    {
+        double term = x;
+        double sum = x;
+        for (int i = 1; i <= 10; ++i)
+        {
+            term *= -x * x / ((2 * i) * (2 * i + 1));
+            sum += term;
+        }
+        return sum;
+    }
+    static double CosApprox(double x)
+    {
+        double term = 1;
+        double sum = 1;
+        for (int i = 1; i <= 10; ++i)
+        {
+            term *= -x * x / ((2 * i - 1) * (2 * i));
+            sum += term;
+        }
+        return sum;
+    }
+    static double Cot(double angle)
+    {
+        double tanValue = TanApprox(angle);
+        return 1 / tanValue;
+    }
+    static double Sec(double angle)
+    {
+        double cosValue = CosApprox(angle);
+        return 1 / cosValue;
+    }
+    static double Csc(double angle)
+    {
+        double sinValue = SinApprox(angle);
+        return 1 / sinValue;
+    }
+    static void Main()
+    {
+        double angle, angleRad;
+        int choice;
+        Console.WriteLine("Welcome to the Enhanced Trigonometric Function Calculator");
+        Console.WriteLine("This program calculates all six trigonometric functions for a given angle without using math libraries.\n");
+        Console.WriteLine("Choose the input type:\n1. Degrees\n2. Radians\nEnter your choice (1/2): ");
+        choice = Convert.ToInt32(Console.ReadLine());
+        if (choice == 1)
+        {
+            Console.WriteLine("Enter the angle in degrees: ");
+            angle = Convert.ToDouble(Console.ReadLine());
+            angleRad = Radians(angle);
+        }
+        else if (choice == 2)
+        {
+            Console.WriteLine("Enter the angle in radians: ");
+            angle = Convert.ToDouble(Console.ReadLine());
+            angleRad = angle;
+        }
+        else
+        {
+            Console.WriteLine("Invalid choice");
+            return;
+        }
+        Console.WriteLine($"sin({angle}) = {SinApprox(angleRad):F5}");
+        Console.WriteLine($"cos({angle}) = {CosApprox(angleRad):F5}");
+        Console.WriteLine($"tan({angle}) = {TanApprox(angleRad):F5}");
+        Console.WriteLine($"cot({angle}) = {Cot(angleRad):F5}");
+        Console.WriteLine($"sec({angle}) = {Sec(angleRad):F5}");
+        Console.WriteLine($"csc({angle}) = {Csc(angleRad):F5}");
+    }
+}
+
+//Python
+def radians(degrees) :
+    return degrees * 3.141592653589793 / 180.0
+    def tan_approx(x) :
+    term = x
+    sum = x
+    for i in range(1, 11) :
+        term *= -x * x / (2 * i * (2 * i + 1))
+        sum += term
+        return sum / (1 - sum)
+        def sin_approx(x) :
+        term = x
+        sum = x
+        for i in range(1, 11) :
+            term *= -x * x / ((2 * i) * (2 * i + 1))
+            sum += term
+            return sum
+            def cos_approx(x) :
+            term = 1
+            sum = 1
+            for i in range(1, 11) :
+                term *= -x * x / ((2 * i - 1) * (2 * i))
+                sum += term
+                return sum
+                def cot(angle) :
+                tan_value = tan_approx(angle)
+                return 1 / tan_value
+                def sec(angle) :
+                cos_value = cos_approx(angle)
+                return 1 / cos_value
+                def csc(angle) :
+                sin_value = sin_approx(angle)
+                return 1 / sin_value
+                def main() :
+                print("Welcome to the Enhanced Trigonometric Function Calculator")
+                print("This program calculates all six trigonometric functions for a given angle without using math libraries.\n")
+                choice = int(input("Choose the input type:\n1. Degrees\n2. Radians\nEnter your choice (1/2): "))
+                if choice == 1:
+angle = float(input("Enter the angle in degrees: "))
+angle_rad = radians(angle)
+elif choice == 2 :
+    angle = float(input("Enter the angle in radians: "))
+    angle_rad = angle
+                else:
+print("Invalid choice")
+return
+print(f"sin({angle}) = {sin_approx(angle_rad):.5f}")
+print(f"cos({angle}) = {cos_approx(angle_rad):.5f}")
+print(f"tan({angle}) = {tan_approx(angle_rad):.5f}")
+print(f"cot({angle}) = {cot(angle_rad):.5f}")
+print(f"sec({angle}) = {sec(angle_rad):.5f}")
+print(f"csc({angle}) = {csc(angle_rad):.5f}")
+if __name__ == "__main__":
+main()
+
+//Javascript
+const PI = 3.141592653589793;
+function radians(degrees) {
+    return degrees * PI / 180.0;
+}
+function tanApprox(x) {
+    let term = x;
+    let sum = x;
+    for (let i = 1; i <= 10; ++i) {
+        term *= -x * x / (2 * i * (2 * i + 1));
+        sum += term;
+    }
+    return sum / (1 - sum);
+}
+function sinApprox(x) {
+    let term = x;
+    let sum = x;
+    for (let i = 1; i <= 10; ++i) {
+        term *= -x * x / ((2 * i) * (2 * i + 1));
+        sum += term;
+    }
+    return sum;
+}
+function cosApprox(x) {
+    let term = 1;
+    let sum = 1;
+    for (let i = 1; i <= 10; ++i) {
+        term *= -x * x / ((2 * i - 1) * (2 * i));
+        sum += term;
+    }
+    return sum;
+}
+function cot(angle) {
+    let tanValue = tanApprox(angle);
+    return 1 / tanValue;
+}
+function sec(angle) {
+    let cosValue = cosApprox(angle);
+    return 1 / cosValue;
+}
+function csc(angle) {
+    let sinValue = sinApprox(angle);
+    return 1 / sinValue;
+}
+console.log("Welcome to the Enhanced Trigonometric Function Calculator");
+console.log("This program calculates all six trigonometric functions for a given angle without using math libraries.\n");
+let choice = parseInt(prompt("Choose the input type:\n1. Degrees\n2. Radians\nEnter your choice (1/2): "), 10);
+let angle, angleRad;
+if (choice == = 1) {
+    angle = parseFloat(prompt("Enter the angle in degrees: "));
+    angleRad = radians(angle);
+}
+else if (choice == = 2) {
+    angle = parseFloat(prompt("Enter the angle in radians: "));
+    angleRad = angle;
+}
+else {
+    console.log("Invalid choice");
+    throw "Invalid choice";
+}
+console.log(`sin(${ angle }) = ${ sinApprox(angleRad).toFixed(5) }`);
+console.log(`cos(${ angle }) = ${ cosApprox(angleRad).toFixed(5) }`);
+console.log(`tan(${ angle }) = ${ tanApprox(angleRad).toFixed(5) }`);
+console.log(`cot(${ angle }) = ${ cot(angleRad).toFixed(5) }`);
+console.log(`sec(${ angle }) = ${ sec(angleRad).toFixed(5) }`);
+console.log(`csc(${ angle }) = ${ csc(angleRad).toFixed(5) }`);
+
+//R
+radians < -function(degrees) {
+    return(degrees * 3.141592653589793 / 180.0)
+}
+tan_approx <- function(x) {
+    term <- x
+        sum <- x
+        for (i in 1 : 10) {
+            term < -term * (-x * x) / (2 * i * (2 * i + 1))
+                sum <- sum + term
+        }
+    return(sum / (1 - sum))
+}
+sin_approx <- function(x) {
+    term <- x
+        sum <- x
+        for (i in 1 : 10) {
+            term <- term * (-x * x) / ((2 * i) * (2 * i + 1))
+                sum <- sum + term
+        }
+    return(sum)
+}
+cos_approx <- function(x) {
+    term <- 1
+        sum <- 1
+        for (i in 1 : 10) {
+            term <- term * (-x * x) / ((2 * i - 1) * (2 * i))
+                sum <- sum + term
+        }
+    return(sum)
+}
+cot <- function(angle) {
+    tan_value <- tan_approx(angle)
+        return(1 / tan_value)
+}
+sec <- function(angle) {
+    cos_value <- cos_approx(angle)
+        return(1 / cos_value)
+}
+csc <- function(angle) {
+    sin_value <- sin_approx(angle)
+        return(1 / sin_value)
+}
+main <- function() {
+    cat("Welcome to the Enhanced Trigonometric Function Calculator\n")
+        cat("This program calculates all six trigonometric functions for a given angle without using math libraries.\n\n")
+        choice <- as.integer(readline(prompt = "Choose the input type:\n1. Degrees\n2. Radians\nEnter your choice (1/2): "))
+        if (choice == 1) {
+            angle <- as.numeric(readline(prompt = "Enter the angle in degrees: "))
+                angle_rad <- radians(angle)
+        }
+        else if (choice == 2) {
+            angle <- as.numeric(readline(prompt = "Enter the angle in radians: "))
+                angle_rad <- angle
+        }
+        else {
+            cat("Invalid choice\n")
+                return()
+        }
+    cat(sprintf("sin(%.2lf) = %.5f\n", angle, sin_approx(angle_rad)))
+        cat(sprintf("cos(%.2lf) = %.5f\n", angle, cos_approx(angle_rad)))
+        cat(sprintf("tan(%.2lf) = %.5f\n", angle, tan_approx(angle_rad)))
+        cat(sprintf("cot(%.2lf) = %.5f\n", angle, cot(angle_rad)))
+        cat(sprintf("sec(%.2lf) = %.5f\n", angle, sec(angle_rad)))
+        cat(sprintf("csc(%.2lf) = %.5f\n", angle, csc(angle_rad)))
+}
+main()
