@@ -1656,7 +1656,7 @@ area_of_sector <- calculate_area_of_sector(radius, central_angle)
 cat("The arclength is:", sprintf("%.2f", arclength), "meters\n") 
 cat("The area of the sector is:", sprintf("%.2f", area_of_sector), "square meters\n") 
 
-//A "Hello World!" Program------------------------------------------------------------------------------------------------------
+//An Angular Speed and a Linear Speed of a Wheel Program------------------------------------------------------------------------------------------------------
 
 //C
 #include <stdio.h> 
